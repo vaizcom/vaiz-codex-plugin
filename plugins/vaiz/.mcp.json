@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Vaiz": {
+      "type": "http",
+      "url": "https://api.vaiz.com/mcp"
+    }
+  }
+}

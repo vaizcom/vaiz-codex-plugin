@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vaiz",
+  "version": "1.0.0",
+  "description": "Connect ChatGPT and Codex to your Vaiz workspace: tasks, boards, documents, Space Memory, and GitHub links via remote MCP with OAuth.",
+  "author": {
+    "name": "Vaiz Ltd.",
+    "email": "mail@vaiz.com",
+    "url": "https://vaiz.com"
+  },
+  "homepage": "https://vaiz.com",
+  "repository": "https://github.com/vaizcom/vaiz-codex-plugin",
+  "license": "MIT",
+  "keywords": ["vaiz", "mcp", "project-management", "tasks", "documents", "space-memory", "oauth", "chatgpt", "codex"]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "vaiz",
+  "interface": {
+    "displayName": "Vaiz"
+  },
+  "plugins": [
+    {
+      "name": "vaiz",
+      "source": {
+        "source": "local",
+        "path": "./plugins/vaiz"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

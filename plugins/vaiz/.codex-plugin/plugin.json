@@ -1,0 +1,35 @@
+{
+  "name": "vaiz",
+  "version": "1.0.0",
+  "description": "Connect ChatGPT and Codex to your Vaiz workspace: tasks, boards, documents, Space Memory, and GitHub links via remote MCP with OAuth.",
+  "author": {
+    "name": "Vaiz Ltd.",
+    "email": "mail@vaiz.com",
+    "url": "https://vaiz.com"
+  },
+  "homepage": "https://vaiz.com",
+  "repository": "https://github.com/vaizcom/vaiz-codex-plugin",
+  "license": "MIT",
+  "keywords": ["vaiz", "mcp", "project-management", "tasks", "documents", "space-memory", "oauth", "chatgpt", "codex"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Vaiz",
+    "shortDescription": "Manage Vaiz work from ChatGPT and Codex.",
+    "longDescription": "Work with Vaiz tasks, boards, documents, milestones, Space Memory, files, workspace activity, and GitHub links through a hosted MCP server with OAuth.",
+    "developerName": "Vaiz Ltd.",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://vaiz.com",
+    "privacyPolicyURL": "https://vaiz.com/legal/privacy-policy",
+    "termsOfServiceURL": "https://vaiz.com/legal/terms-of-service",
+    "defaultPrompt": [
+      "Show my open Vaiz tasks and what needs attention.",
+      "Summarize the latest activity in my Vaiz project.",
+      "Create a Vaiz Devlog for the work completed today."
+    ],
+    "brandColor": "#6C5CE7",
+    "composerIcon": "./assets/vaiz-logo.png",
+    "logo": "./assets/vaiz-logo.png"
+  }
+}
