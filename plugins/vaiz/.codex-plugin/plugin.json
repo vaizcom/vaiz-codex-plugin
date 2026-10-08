@@ -15,12 +15,13 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Vaiz",
-    "shortDescription": "Manage Vaiz work from ChatGPT and Codex.",
+    "shortDescription": "Manage your Vaiz workspace",
     "longDescription": "Work with Vaiz tasks, boards, documents, milestones, Space Memory, files, workspace activity, and GitHub links through a hosted MCP server with OAuth.",
     "developerName": "Vaiz Ltd.",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],
     "websiteURL": "https://vaiz.com",
+    "supportURL": "https://vaiz.com/help/support",
     "privacyPolicyURL": "https://vaiz.com/legal/privacy-policy",
     "termsOfServiceURL": "https://vaiz.com/legal/terms-of-service",
     "defaultPrompt": [
@@ -31,5 +32,64 @@
     "brandColor": "#6C5CE7",
     "composerIcon": "./assets/vaiz-logo.png",
     "logo": "./assets/vaiz-logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the signed-in user's open tasks",
+              "prompt": "Show my open Vaiz tasks and what needs attention.",
+              "tools_triggered": "get_current_user, query_tasks",
+              "expected_behavior": "Returns the incomplete tasks assigned to the signed-in user with their HRIDs, boards, statuses, and due dates, highlighting overdue items."
+            },
+            {
+              "description": "Create a task on a board",
+              "prompt": "Create a Vaiz task called \"Prepare release notes\" in the Demo project and assign it to me.",
+              "tools_triggered": "list_projects, list_boards, get_current_user, create_task",
+              "expected_behavior": "Creates the task on a board in the Demo project, assigns it to the signed-in user, and returns the new task HRID and link."
+            },
+            {
+              "description": "Summarize recent project activity",
+              "prompt": "Summarize the latest activity in my Vaiz Demo project.",
+              "tools_triggered": "list_projects, get_project_history",
+              "expected_behavior": "Summarizes recent changes in the Demo project (created, moved, and completed tasks, comments) with who made them and when."
+            },
+            {
+              "description": "Find and summarize a document",
+              "prompt": "Find the Vaiz document about onboarding and summarize it.",
+              "tools_triggered": "search_space, get_document",
+              "expected_behavior": "Finds the matching document in the space and returns a short summary of its content with the document title and link."
+            },
+            {
+              "description": "Record a Devlog in Space Memory",
+              "prompt": "Create a Vaiz Devlog for the work completed today: fixed the login redirect bug and added tests.",
+              "tools_triggered": "create_devlog",
+              "expected_behavior": "Creates a Devlog entry in Space Memory describing the completed work and returns its id."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Out-of-scope action: payments",
+              "prompt": "Pay my Vaiz subscription invoice with my saved card."
+            },
+            {
+              "description": "Unsupported destructive action: delete the whole space",
+              "prompt": "Delete my entire Vaiz space and all its data."
+            },
+            {
+              "description": "Access outside the connected account",
+              "prompt": "Show me the tasks in a Vaiz space I am not a member of."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "Initial release: Vaiz tasks, boards, documents, milestones, Space Memory, files, and GitHub links via the hosted Vaiz MCP server with OAuth."
+      }
+    }
   }
 }
