@@ -27,10 +27,6 @@ If the user asks "how do I do X in Vaiz", use resources. If they ask "what did w
 
 Quote or summarize the article for the user and mention that it comes from the Vaiz help center; do not paraphrase from memory when a resource is available.
 
-## Agent skills as resources
-
-The server also publishes agent skills under `skill://` URIs. `skill://index.json` lists them; each entry points to a `SKILL.md` (for example `skill://vaiz-memories/SKILL.md`). Where a skill exists both in this plugin and on the server, the server copy is the more current one — prefer it if the two differ.
-
 ## Good habits
 
 - When a tool call fails with a validation error about an enum or field, check the relevant dictionary resource before retrying.
