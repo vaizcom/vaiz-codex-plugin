@@ -85,7 +85,8 @@
           ]
         },
         "commerce": false,
-        "commerce_description": "This plugin does not sell products or process payments."
+        "commerce_description": "This plugin does not sell products or process payments.",
+        "demo_recording_url": "https://www.youtube.com/watch?v=LwmUlMinUfQ"
       },
       "publication": {
         "release_notes": "Initial release: Vaiz tasks, boards, documents, milestones, Space Memory, files, and GitHub links via the hosted Vaiz MCP server with OAuth."

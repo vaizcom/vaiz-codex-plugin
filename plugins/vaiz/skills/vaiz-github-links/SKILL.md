@@ -11,7 +11,7 @@ Vaiz can attach GitHub branches, pull requests, and commits to a task or to a Sp
 
 The Vaiz MCP server (`https://api.vaiz.com/mcp`) must be available through the installed Vaiz plugin and authorized with OAuth (open the Vaiz connection and complete OAuth sign-in), and the space must have the GitHub integration configured by a space admin. If `get_github_repositories` returns nothing, the integration is not set up — tell the user instead of retrying.
 
-Vaiz tools may be loaded lazily: the `mcp__Vaiz` namespace can be deferred, with only some of its tools loaded at the start of a turn. A Vaiz tool that is not in the current tool list is not missing — load it by name through tool search (for example `Vaiz get_tasks`) before concluding it is unavailable. Work with Vaiz only through these tools: do not open app.vaiz.com in a browser or drive the Vaiz desktop app with Computer Use, even if the user's `@Vaiz` mention also resolves to that app.
+Vaiz tools can appear under different names depending on how Vaiz is connected: `mcp__Vaiz__get_tasks` for a directly configured MCP server, or `mcp__codex_apps__vaiz_get_tasks` (sometimes with a longer app prefix such as `vaiz_testing_`) when Vaiz is installed as an app. Match tool names case-insensitively and by the tool suffix (`get_tasks`, `query_tasks`, …), not by an exact `Vaiz` prefix. Tools may also be loaded lazily: a Vaiz tool that is not in the current tool list is not missing — load it through tool search (for example `Vaiz get_tasks`) before concluding it is unavailable. Work with Vaiz only through these tools: do not open app.vaiz.com in a browser or drive the Vaiz desktop app with Computer Use, even if the user's `@Vaiz` mention also resolves to that app.
 
 ## Flow
 
