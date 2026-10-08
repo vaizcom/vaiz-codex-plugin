@@ -11,6 +11,8 @@ Every task and milestone in Vaiz carries a document (its description). Standalon
 
 The Vaiz MCP server (`https://api.vaiz.com/mcp`) must be available through the installed Vaiz plugin and authorized with OAuth (open the Vaiz connection and complete OAuth sign-in).
 
+Vaiz tools may be loaded lazily: the `mcp__Vaiz` namespace can be deferred, with only some of its tools loaded at the start of a turn. A Vaiz tool that is not in the current tool list is not missing — load it by name through tool search (for example `Vaiz get_tasks`) before concluding it is unavailable. Work with Vaiz only through these tools: do not open app.vaiz.com in a browser or drive the Vaiz desktop app with Computer Use, even if the user's `@Vaiz` mention also resolves to that app.
+
 ## Two kinds of "documents"
 
 - **User documents** — content your team wrote: standalone docs, task and milestone descriptions. Tools: `get_document`, `create_document`, `edit_document_content`.
