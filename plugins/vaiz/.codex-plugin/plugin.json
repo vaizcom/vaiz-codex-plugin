@@ -1,6 +1,6 @@
 {
   "name": "vaiz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connect ChatGPT and Codex to your Vaiz workspace: tasks, boards, documents, Space Memory, and GitHub links via remote MCP with OAuth.",
   "author": {
     "name": "Vaiz Ltd.",
